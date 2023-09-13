@@ -1,0 +1,10 @@
+section.container{
+    margin-top: 10%;
+    background: linear-gradient(to right top, #b2ffc3 40%,#91ffaa 60%, #85c791 100%);
+    height: 67vh;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}

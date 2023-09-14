@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+}
+
+header {
+    height: 10vh;
+    background-color: rgb(64, 193, 107);
+}
+
+main {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(images/3ydq29_0kNXr9q800.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+main div {
+    width: 50%;
+    height: 70vh;
+    /* background-color: blue; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+main span {
+    width: 30%;
+    height: 10vh;
+    background-color: green;
+    text-align: center;
+}
+
+.asd {
+    width: 30%;
+    height: 20vh;
+    border-radius: 10px;
+}

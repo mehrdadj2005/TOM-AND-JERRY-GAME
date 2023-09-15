@@ -5,6 +5,7 @@ body {
 header {
     height: 10vh;
     background-color: rgb(64, 193, 107);
+    display: flex;
 }
 
 main {
@@ -19,24 +20,46 @@ main {
 }
 
 main div {
-    width: 50%;
-    height: 70vh;
-    /* background-color: blue; */
+    width: 70%;
+    height: 80vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
 }
 
-main span {
+main div div {
     width: 30%;
-    height: 10vh;
-    background-color: green;
-    text-align: center;
+    height: 25vh;
+    position: relative;
 }
 
 .asd {
-    width: 30%;
-    height: 20vh;
+    width: 100%;
+    height: 25vh;
     border-radius: 10px;
+}
+
+.xxx {
+    position: absolute;
+    width: 60%;
+    bottom: 0vh;
+    left: 6vh;
+    animation-duration: 0.5s;
+
+    display: none;
+}
+
+@keyframes show {
+    0% {
+        width: 0;
+    }
+
+    80% {
+        width: 60%;
+    }
+
+    90% {
+        display: none;
+    }
 }

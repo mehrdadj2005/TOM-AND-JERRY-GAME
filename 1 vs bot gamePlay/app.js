@@ -120,4 +120,11 @@ function music() {
     const gameMusic = setTimeout(() => {
         musicPart.pause()
     }, 31000);
+
+    const stopDedMusic = setInterval(() => {
+        if (dmage.textContent == 0) {
+            musicPart.pause()
+        }
+    }, 100);
 }
+

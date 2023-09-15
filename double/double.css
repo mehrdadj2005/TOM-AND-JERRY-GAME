@@ -42,12 +42,13 @@ main div div {
 
 .xxx {
     position: absolute;
-    width: 60%;
+    width: 0;
     bottom: 0vh;
     left: 6vh;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
 
     display: none;
+    animation-fill-mode: forwards;
 }
 
 @keyframes show {
@@ -59,7 +60,8 @@ main div div {
         width: 60%;
     }
 
-    90% {
-        display: none;
+    100% {
+        width: 0;
+        animation-name: none;
     }
 }

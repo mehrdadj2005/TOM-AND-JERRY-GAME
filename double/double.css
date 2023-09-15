@@ -1,11 +1,29 @@
 body {
     margin: 0;
+    background: url(images/3ydq29_0kNXr9q800.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-header {
-    height: 10vh;
-    background-color: rgb(64, 193, 107);
+h1 {
+    margin: 0;
+}
+
+section {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 0.5%;
+}
+
+section * {
+    font-size: 5vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: 0.5vh solid rgb(0, 247, 255);
+    background-color: rgba(0, 255, 255, 0.36);
+    color: white;
 }
 
 main {
@@ -13,10 +31,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url(images/3ydq29_0kNXr9q800.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }
 
 main div {
@@ -45,7 +59,7 @@ main div div {
     width: 0;
     bottom: 0vh;
     left: 6vh;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
 
     display: none;
     animation-fill-mode: forwards;

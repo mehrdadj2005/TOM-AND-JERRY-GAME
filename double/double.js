@@ -14,7 +14,7 @@ let span7 = document.querySelector('#span7')
 let span8 = document.querySelector('#span8')
 let span9 = document.querySelector('#span9')
 
-let hel = document.querySelector('header h1')
+let hel = document.querySelector('section h1')
 
 let time = document.querySelector('#time')
 
@@ -98,7 +98,7 @@ body.addEventListener('click', (e) => {
 
 // defualt timer for game
 
-let sec = 31
+let sec = 30
 
 time.textContent = `${sec} s`
 // function is about timer in the game

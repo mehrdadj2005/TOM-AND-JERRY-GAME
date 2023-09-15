@@ -40,7 +40,7 @@ function timer() {
             // stop the timer
             clearInterval(timerPart)
             // finnish music
-            
+
         } else {
             if (sec < 10) {
                 sec = `0${sec}`
@@ -85,12 +85,24 @@ dmage.textContent = heart
 targetImg.forEach((item) => {
     item.addEventListener("click", () => {
         // active this Instructions
-        if (heart>0) {
+        if (heart > 0) {
             heart -= 1
             dmage.textContent = heart
+
+            // use silverBox modal 
+            silverBox({
+                position: "top-right",
+                timer: 2000,
+                alertIcon: "success",
+                title: {
+                    text: "nice shot"
+                },
+                centerContent: true
+            })
+
             // we dosen't Permission to heart to be under zero(0)
-        }else if(heart<=0){
-            heart =0
+        } else if (heart <= 0) {
+            heart = 0
             dmage.textContent = heart
         }
     })
@@ -102,7 +114,7 @@ targetImg.forEach((item) => {
 function music() {
     let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
     musicPart.play()
-    const gameMusic= setTimeout(() => {
+    const gameMusic = setTimeout(() => {
         musicPart.pause()
     }, 31000);
 }

@@ -1,13 +1,20 @@
 body{
-    cursor: url(../img/Web/icons8-hammer-color-16.png);
+   background: url(../double/images/3ydq29_0kNXr9q800.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
 }
 header{
     text-align: center;
 }
+
+.firstImg{
+    width: 100%;
+}
 .target{
     text-align: center;
     margin-top: 5%;
-    background: linear-gradient(to bottom,#ffffff 30%,rgb(103, 98, 98));
     padding: 20px 0px 20px 0px;
 }
 .target>div>div{

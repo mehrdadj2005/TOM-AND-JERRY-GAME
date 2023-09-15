@@ -93,9 +93,12 @@ targetImg.forEach((item) => {
             silverBox({
                 position: "top-right",
                 timer: 2000,
-                alertIcon: "success",
+                // alertIcon: "success",
                 title: {
-                    text: "nice shot"
+                    text: "nice shot",
+                    alertIcon: "success",
+
+
                 },
                 centerContent: true
             })

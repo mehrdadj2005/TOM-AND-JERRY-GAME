@@ -48,13 +48,13 @@ main div div {
     position: relative;
 }
 
-.asd {
+.imgHomeTop {
     width: 100%;
     height: 25vh;
     border-radius: 10px;
 }
 
-.xxx {
+.jerryImg {
     position: absolute;
     width: 0;
     bottom: 0vh;

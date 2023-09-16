@@ -2,7 +2,7 @@
 
 let body = document.querySelector('body')
 
-let spans = document.querySelectorAll('.asd')
+let spans = document.querySelectorAll('.imgHomeTop')
 
 let span1 = document.querySelector('#span1')
 let span2 = document.querySelector('#span2')
@@ -21,39 +21,39 @@ let time = document.querySelector('#time')
 let y = false
 body.addEventListener('keydown', (e) => {
     if (e.code === 'KeyQ') {
-        asd(span1)
+        noneAnimation(span1)
         span1.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyW') {
-        asd(span2)
+        noneAnimation(span2)
         span2.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyE') {
-        asd(span3)
+        noneAnimation(span3)
         span3.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyA') {
-        asd(span4)
+        noneAnimation(span4)
         span4.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyS') {
-        asd(span5)
+        noneAnimation(span5)
         span5.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyD') {
-        asd(span6)
+        noneAnimation(span6)
         span6.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyZ') {
-        asd(span7)
+        noneAnimation(span7)
         span7.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyX') {
-        asd(span8)
+        noneAnimation(span8)
         span8.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     } else if (e.code === 'KeyC') {
-        asd(span9)
+        noneAnimation(span9)
         span9.style = 'animation-name: show;display: inline-block;'
         chekShowCharacter()
     }
@@ -63,7 +63,7 @@ body.addEventListener('keydown', (e) => {
     }
 })
 
-function asd(e) {
+function noneAnimation(e) {
     let x = setInterval(() => {
         e.style = 'animation-name: none;'
         clearInterval(x)
@@ -79,13 +79,13 @@ function chekShowCharacter() {
 
 setInterval(() => {
     if (x == 0) {
-        console.log('زهر خر ، کره مار');
+        // اگر کارکتر را نمایش نداد این مودال نمایش دهد
     }
     x = 0
 }, 5000);
 
 body.addEventListener('click', (e) => {
-    if (e.target.classList == 'xxx') {
+    if (e.target.classList == 'jerryImg') {
         hel.textContent -= 1
     }
     if (hel.textContent == 0) {

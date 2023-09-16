@@ -3,7 +3,7 @@
 
 // selects-----
 let time = document.querySelector('#time')
-let start = document.querySelector('#start>button')
+let start = document.querySelector('#start')
 let dmage = document.querySelector('#dmage')
 let firstImg = document.querySelectorAll('.firstImg')
 let targetImg = document.querySelectorAll('.targetImg')
@@ -26,7 +26,7 @@ function startGame() {
 
 // defualt timer for game
 
-let sec = 31
+let sec = 30
 
 time.textContent = `${sec} s`
 // function is about timer in the game
@@ -119,7 +119,7 @@ function music() {
     musicPart.play()
     const gameMusic = setTimeout(() => {
         musicPart.pause()
-    }, 31000);
+    }, 30000);
 
     const stopDedMusic = setInterval(() => {
         if (dmage.textContent == 0) {

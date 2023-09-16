@@ -1,30 +1,118 @@
-body{
-   background: url(../double/images/3ydq29_0kNXr9q800.jpg);
-   background-position: center;
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 100vh;
-}
-header{
-    text-align: center;
+body {
+    background: url(../double/images/3ydq29_0kNXr9q800.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
 }
 
-.firstImg{
-    width: 100%;
-}
-.target{
+header {
     text-align: center;
-    margin-top: 5%;
-    padding: 20px 0px 20px 0px;
+    margin-top: 1vh !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.target>div>div{
+
+header * {
+    font-size: 5vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    border: 0.5vh solid rgb(0, 247, 255);
+    background-color: rgba(0, 255, 255, 0.36);
+    color: white;
+}
+
+.button-primary {
+    font-size: 3vh;
+    font-weight: bold;
+}
+
+.firstImg {
+    width: 90%;
+    margin: 10px;
+}
+
+main {
+    /* height: 87vh; */
+
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .columns {
+    margin-bottom: 3vh;
+}
+
+.target {
+    /* text-align: center;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70%;
+
+    margin: 1vh auto 0; */
+
+
+    width: 70%;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+
+}
+
+.target>div {
+    /* width: 30%;
+    height: 25vh;
+    border-radius: 10px;
+    margin: 1vh; */
+
+    width: 30%;
+    height: 25vh;
     position: relative;
 }
-.target img:last-of-type{
+
+.target>div>img:nth-of-type(1) {
+    width: 100%;
+    height: 25vh;
+    border-radius: 10px;
+}
+
+.target>div>div {
+    position: relative;
+}
+
+.target img:last-of-type {
     position: absolute;
     top: 0;
     left: 0;
     z-index: -1;
     width: 100%;
     height: 100%;
+}
+
+main .container {
+    width: 100% !important;
+    height: 70vh !important;
+}
+
+@keyframes show {
+    0% {
+        width: 0;
+    }
+
+    80% {
+        width: 60%;
+    }
+
+    100% {
+        width: 0;
+        animation-name: none;
+    }
 }

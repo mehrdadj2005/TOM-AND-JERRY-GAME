@@ -16,6 +16,10 @@ let span9 = document.querySelector('#span9')
 
 let hel = document.querySelector('section h1')
 
+let again = document.querySelector('#again')
+
+let modal = document.querySelector('#modalFonishTimeGame')
+
 let time = document.querySelector('#time')
 
 let y = false
@@ -60,6 +64,7 @@ body.addEventListener('keydown', (e) => {
     if (y == false) {
         y = true
         timer()
+        music()
     }
 })
 
@@ -73,23 +78,32 @@ function noneAnimation(e) {
 let x = 0
 function chekShowCharacter() {
     x += 1
-    // console.log(x);
-    return x
+    let modalTimer = setInterval(asm, 5000)
 }
-
-setInterval(() => {
+function asm() {
     if (x == 0) {
         // اگر کارکتر را نمایش نداد این مودال نمایش دهد
+        silverBox({
+            timer: 2000,
+            customIcon: "/public/src/images/lightTimeout.png",
+            title: {
+                text: "You are so cute"
+            },
+            centerContent: true,
+            position: 'top-right',
+            theme: 'dark'
+        })
     }
     x = 0
-}, 5000);
+}
+
+// let alertModal = setInterval(() => {
+
+// }, 3000);
 
 body.addEventListener('click', (e) => {
     if (e.target.classList == 'jerryImg') {
         hel.textContent -= 1
-    }
-    if (hel.textContent == 0) {
-        body.style = 'display:none;'
     }
 })
 
@@ -120,5 +134,48 @@ function timer() {
             }
             time.textContent = `${sec} s`
         }
+        if (hel.textContent == 0) {
+            // stop the timer
+            clearInterval(timerPart)
+        }
     }, 1000);
+}
+
+function modalFinishTime(e) {
+    let h1Modal = document.querySelector('#modalFonishTimeGame h1')
+
+    modal.style.display = 'flex'
+
+    h1Modal.textContent = e
+
+    y = false
+}
+
+
+// for game music
+function music() {
+    let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
+    musicPart.play()
+    const gameMusic = setTimeout(() => {
+        musicPart.pause()
+        modalFinishTime('موش فرار کرد و برنده شد')
+        clearInterval(alertModal)
+    }, 30000);
+
+    const stopDedMusic = setInterval(() => {
+        if (hel.textContent == 0) {
+            musicPart.pause()
+            modalFinishTime('گربه موش رو خورد و برنده شد')
+            clearInterval(alertModal)
+        }
+    }, 100);
+}
+
+again.addEventListener('click', againGame)
+
+function againGame() {
+    modal.style.display = 'none'
+    sec = 30
+    time.textContent = sec
+    hel.textContent = 5
 }

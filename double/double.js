@@ -105,7 +105,9 @@ function timer() {
 
 function modalFinishTime(e) {
     let h1Modal = document.querySelector('#modalFonishTimeGame h1')
+    let black = document.querySelector('#black')
 
+    black.style.display = 'block'
     modal.style.display = 'flex'
 
     h1Modal.textContent = e
@@ -126,6 +128,7 @@ function music() {
         if (hel.textContent == 0) {
             musicPart.pause()
             modalFinishTime('گربه موش رو خورد و برنده شد')
+            clearInterval(gameMusic)
         }
     }, 100);
 }
@@ -133,7 +136,7 @@ function music() {
 again.addEventListener('click', againGame)
 
 function againGame() {
-    modal.style.display = 'none'
+    black.style.display = 'none'
     sec = 30
     time.textContent = sec
     hel.textContent = 5

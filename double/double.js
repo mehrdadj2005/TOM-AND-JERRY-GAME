@@ -27,39 +27,30 @@ body.addEventListener('keydown', (e) => {
     if (e.code === 'KeyQ') {
         noneAnimation(span1)
         span1.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyW') {
         noneAnimation(span2)
         span2.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyE') {
         noneAnimation(span3)
         span3.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyA') {
         noneAnimation(span4)
         span4.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyS') {
         noneAnimation(span5)
         span5.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyD') {
         noneAnimation(span6)
         span6.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyZ') {
         noneAnimation(span7)
         span7.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyX') {
         noneAnimation(span8)
         span8.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     } else if (e.code === 'KeyC') {
         noneAnimation(span9)
         span9.style = 'animation-name: show;display: inline-block;'
-        chekShowCharacter()
     }
     if (y == false) {
         y = true
@@ -75,40 +66,11 @@ function noneAnimation(e) {
     }, 1000);
 }
 
-let x = 0
-function chekShowCharacter() {
-    x += 1
-    let modalTimer = setInterval(asm, 5000)
-}
-function asm() {
-    if (x == 0) {
-        // اگر کارکتر را نمایش نداد این مودال نمایش دهد
-        silverBox({
-            timer: 2000,
-            customIcon: "/public/src/images/lightTimeout.png",
-            title: {
-                text: "You are so cute"
-            },
-            centerContent: true,
-            position: 'top-right',
-            theme: 'dark'
-        })
-    }
-    x = 0
-}
-
-// let alertModal = setInterval(() => {
-
-// }, 3000);
-
 body.addEventListener('click', (e) => {
     if (e.target.classList == 'jerryImg') {
         hel.textContent -= 1
     }
 })
-
-
-
 
 // defualt timer for game
 
@@ -148,7 +110,6 @@ function modalFinishTime(e) {
 
     h1Modal.textContent = e
 
-    y = false
 }
 
 
@@ -159,14 +120,12 @@ function music() {
     const gameMusic = setTimeout(() => {
         musicPart.pause()
         modalFinishTime('موش فرار کرد و برنده شد')
-        clearInterval(alertModal)
     }, 30000);
 
     const stopDedMusic = setInterval(() => {
         if (hel.textContent == 0) {
             musicPart.pause()
             modalFinishTime('گربه موش رو خورد و برنده شد')
-            clearInterval(alertModal)
         }
     }, 100);
 }
@@ -178,4 +137,5 @@ function againGame() {
     sec = 30
     time.textContent = sec
     hel.textContent = 5
+    y = false
 }

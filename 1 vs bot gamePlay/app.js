@@ -36,6 +36,9 @@ function timer() {
     // every 1second these are called
     const timerPart = setInterval(() => {
         sec -= 1
+        if (heart == 0 ) {
+            clearInterval(timerPart)
+        }
         if (sec == 0) {
             time.textContent = `00`
             clearInterval(target())
@@ -125,13 +128,13 @@ function music() {
     let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
     musicPart.play()
     // after 30sec game will show modal and pause music
-    const gameMusic = setTimeout(() => {
-        // pause the music
-        musicPart.pause()
+    // const gameMusic = setTimeout(() => {
+    //     // pause the music
+    //     musicPart.pause()
 
-        // call end modal
-        modalFinishTime('موش فرار کرد و برنده شد')
-    }, 30000);
+    //     // call end modal
+    //     modalFinishTime('موش فرار کرد و برنده شد')
+    // }, 30000);
 //  it's for show modal when mouse damage is 0
     const stopDedMusic = setInterval(() => {
         if (dmage.textContent == 0) {
@@ -140,6 +143,12 @@ function music() {
 
             // call end modal
             modalFinishTime('گربه موش رو خورد و برنده شد')
+        }else if(time.textContent == 0){
+             // pause the music
+        musicPart.pause()
+
+        // call end modal
+        modalFinishTime('موش فرار کرد و برنده شد')
         }
     }, 100);
 }
@@ -163,7 +172,7 @@ function againGame() {
     black.style.display = 'none'
     sec = 30
     time.textContent = sec
+    heart = 5
     dmage.textContent = 5
     start.disabled = false
-    y = false
 }

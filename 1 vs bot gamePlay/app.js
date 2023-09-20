@@ -7,6 +7,8 @@ let start = document.querySelector('#start')
 let dmage = document.querySelector('#dmage')
 let firstImg = document.querySelectorAll('.firstImg')
 let targetImg = document.querySelectorAll('.targetImg')
+let modal= document.querySelector("#modalFonishTimeGame")
+let again = document.querySelector("#again")
 
 
 // when user click on start button
@@ -65,6 +67,11 @@ function target() {
         let ourTarget = randomTarget();
         // give style to choose image
         ourTarget.style = "z-index: 1;"
+        // ourTarget.style = 'animation-name: show;'
+
+        if (dmage.textContent == 0) {
+            clearInterval(imageTarget);
+        }
         // after .5sec active this function
         const x = setTimeout(() => {
             ourTarget.style = "z-index: -1;"
@@ -81,11 +88,10 @@ function target() {
 // user has 5 damage
 let heart = 5
 dmage.textContent = heart
-// each target image click
-targetImg.forEach((item) => {
-    item.addEventListener("click", () => {
-        // active this Instructions
-        if (heart > 0) {
+let body =document.querySelector('body').addEventListener("click", (e)=>{
+    if (e.target.classList.contains("targetImg")) {
+          // active this Instructions
+          if (heart > 0) {
             heart -= 1
             dmage.textContent = heart
 
@@ -108,23 +114,56 @@ targetImg.forEach((item) => {
             heart = 0
             dmage.textContent = heart
         }
-    })
-});
+    }
+})
 
 // music part----------
 
 // for game music
 function music() {
+    // play music
     let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
     musicPart.play()
+    // after 30sec game will show modal and pause music
     const gameMusic = setTimeout(() => {
+        // pause the music
         musicPart.pause()
-    }, 30000);
 
+        // call end modal
+        modalFinishTime('موش فرار کرد و برنده شد')
+    }, 30000);
+//  it's for show modal when mouse damage is 0
     const stopDedMusic = setInterval(() => {
         if (dmage.textContent == 0) {
+            // pause the music
             musicPart.pause()
+
+            // call end modal
+            modalFinishTime('گربه موش رو خورد و برنده شد')
         }
     }, 100);
 }
 
+// modal part--------
+let y = false
+function modalFinishTime(e) {
+    let h1Modal = document.querySelector('#modalFonishTimeGame h1')
+    let black = document.querySelector('#black')
+
+    black.style.display = 'block'
+    modal.style.display = 'flex'
+
+    h1Modal.textContent = e
+
+}
+
+again.addEventListener('click', againGame)
+// when click on again in modal
+function againGame() {
+    black.style.display = 'none'
+    sec = 30
+    time.textContent = sec
+    dmage.textContent = 5
+    start.disabled = false
+    y = false
+}

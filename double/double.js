@@ -1,5 +1,3 @@
-
-
 let body = document.querySelector('body')
 
 let spans = document.querySelectorAll('.imgHomeTop')
@@ -66,6 +64,32 @@ function noneAnimation(e) {
     }, 1000);
 }
 
+let x = 0
+
+function chekShowCharacter() {
+    x += 1
+    // let modalTimer = setInterval(asm, 5000)
+}
+
+function asm() {
+    if (x == 0) {
+        // اگر کارکتر را نمایش نداد این مودال نمایش دهد
+        silverBox({
+            timer: 2000,
+            customIcon: "/public/src/images/lightTimeout.png",
+            title: {
+                text: "You are so cute"
+            },
+            centerContent: true,
+            position: 'top-right',
+            theme: 'dark'
+        })
+    }
+    x = 0
+}
+
+
+
 body.addEventListener('click', (e) => {
     if (e.target.classList == 'jerryImg') {
         hel.textContent -= 1
@@ -103,6 +127,33 @@ function timer() {
     }, 1000);
 }
 
+
+
+// for game music
+function music() {
+    // play music
+    let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
+    musicPart.play()
+        // after 30sec game will show modal and pause music
+    const gameMusic = setTimeout(() => {
+            // pause the music
+            musicPart.pause()
+        // call end modal
+        modalFinishTime('موش فرار کرد و برنده شد')
+    }, 30000);
+//  it's for show modal when mouse damage is 0
+const stopDedMusic = setInterval(() => {
+    if (hel.textContent == 0) {
+            // pause the music
+            musicPart.pause()
+            // call end modal
+            modalFinishTime('گربه موش رو خورد و برنده شد')
+            clearInterval(gameMusic)
+        }
+    }, 100);
+}
+
+// modal part---------
 function modalFinishTime(e) {
     let h1Modal = document.querySelector('#modalFonishTimeGame h1')
     let black = document.querySelector('#black')
@@ -114,26 +165,8 @@ function modalFinishTime(e) {
 
 }
 
-
-// for game music
-function music() {
-    let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
-    musicPart.play()
-    const gameMusic = setTimeout(() => {
-        musicPart.pause()
-        modalFinishTime('موش فرار کرد و برنده شد')
-    }, 30000);
-
-    const stopDedMusic = setInterval(() => {
-        if (hel.textContent == 0) {
-            musicPart.pause()
-            modalFinishTime('گربه موش رو خورد و برنده شد')
-            clearInterval(gameMusic)
-        }
-    }, 100);
-}
-
 again.addEventListener('click', againGame)
+// when click on again in modal
 
 function againGame() {
     black.style.display = 'none'

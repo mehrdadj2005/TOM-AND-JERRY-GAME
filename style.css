@@ -1,3 +1,7 @@
+body {
+    margin: 0;
+}
+
 section.container {
     /* margin-top: 15vh; */
     /* background: linear-gradient(to right top, rgba(145, 255, 0, 0.665) 40%, #37ff00c0 60%, #00fc5c 100%); */

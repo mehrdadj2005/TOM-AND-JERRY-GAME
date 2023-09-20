@@ -134,21 +134,26 @@ function music() {
     // play music
     let musicPart = new Audio("../music/Klaus Badelt - He's a Pirate (320).mp3")
     musicPart.play()
-        // after 30sec game will show modal and pause music
-    const gameMusic = setTimeout(() => {
-            // pause the music
-            musicPart.pause()
-        // call end modal
-        modalFinishTime('موش فرار کرد و برنده شد')
-    }, 30000);
-//  it's for show modal when mouse damage is 0
-const stopDedMusic = setInterval(() => {
-    if (hel.textContent == 0) {
+    // after 30sec game will show modal and pause music
+    // const gameMusic = setTimeout(() => {
+    //         // pause the music
+    //         musicPart.pause()
+    //     // call end modal
+    //     modalFinishTime('موش فرار کرد و برنده شد')
+    // }, 30000);
+    //  it's for show modal when mouse damage is 0
+    const stopDedMusic = setInterval(() => {
+        if (hel.textContent == 0) {
             // pause the music
             musicPart.pause()
             // call end modal
             modalFinishTime('گربه موش رو خورد و برنده شد')
             clearInterval(gameMusic)
+        } else if (time.textContent == 0) {
+            // pause the music
+            musicPart.pause()
+            // call end modal
+            modalFinishTime('موش فرار کرد و برنده شد')
         }
     }, 100);
 }

@@ -4,7 +4,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     height: 99vh;
-    margin:0px
+    margin: 0px
 }
 
 header {
@@ -16,19 +16,13 @@ header {
     justify-content: space-evenly;
 }
 
-header * {
+header #dmage,#start,#time{
     font-size: 5vh;
     padding: 1vh;
     border-radius: 1vh;
     border: 0.5vh solid rgb(0, 247, 255);
     background-color: rgba(0, 255, 255, 0.36);
     color: white;
-}
-
-#dmage{
-    border: none;
-    background-color: red;
-    
 }
 
 .button-primary {

@@ -21,13 +21,19 @@ section {
     margin-top: 0.5%;
 }
 
-section * {
+section #damage,#time {
     font-size: 5vh;
     padding: 1vh;
     border-radius: 1vh;
     border: 0.5vh solid rgb(0, 247, 255);
     background-color: rgba(0, 255, 255, 0.36);
     color: white;
+}
+
+#damage *{
+    font-size: 5vh;
+    display: inline-block;
+    vertical-align: middle;
 }
 
 main {

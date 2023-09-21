@@ -74,16 +74,7 @@ function chekShowCharacter() {
 function asm() {
     if (x == 0) {
         // اگر کارکتر را نمایش نداد این مودال نمایش دهد
-        silverBox({
-            timer: 2000,
-            customIcon: "/public/src/images/lightTimeout.png",
-            title: {
-                text: "You are so cute"
-            },
-            centerContent: true,
-            position: 'top-right',
-            theme: 'dark'
-        })
+       
     }
     x = 0
 }
@@ -93,6 +84,18 @@ function asm() {
 body.addEventListener('click', (e) => {
     if (e.target.classList == 'jerryImg') {
         hel.textContent -= 1
+
+        // use silverBox modal 
+        silverBox({
+            position: "top-right",
+            timer: 2000,
+            title: {
+                text: "nice shot",
+                alertIcon: "success",
+            },
+            centerContent: true
+        })
+
     }
 })
 

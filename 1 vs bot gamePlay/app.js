@@ -4,7 +4,7 @@
 // selects-----
 let time = document.querySelector('#time')
 let start = document.querySelector('#start')
-let dmage = document.querySelector('#dmage')
+let dmage = document.querySelector('#dmage>span:last-of-type')
 let firstImg = document.querySelectorAll('.firstImg')
 let targetImg = document.querySelectorAll('.targetImg')
 let modal= document.querySelector("#modalFonishTimeGame")

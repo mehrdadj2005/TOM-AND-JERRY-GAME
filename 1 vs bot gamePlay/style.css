@@ -25,6 +25,12 @@ header * {
     color: white;
 }
 
+#dmage{
+    border: none;
+    background-color: red;
+    
+}
+
 .button-primary {
     font-size: 3vh;
     font-weight: bold;
